@@ -4,9 +4,9 @@
 https://docs.microsoft.com/en-us/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-key-vault
 
 ## Login to azure
-az login
-az account list
-az account set -s ssssssss-ssss-ssss-ssss-ssssssssssss
+az login <br/>
+az account list <br/>
+az account set -s ssssssss-ssss-ssss-ssss-ssssssssssss <br/>
 
 ## Create a service principal
 
@@ -32,9 +32,9 @@ Save appId,  name, password, tenant values
 az account list-locations --output table
 
 ### create Resource Group
-az group create --location eastus --name keyvault-rg
-RG=keyvault-rg
-KVNAME=arockssprngbootkv
+az group create --location eastus --name keyvault-rg <br/>
+RG=keyvault-rg <br/>
+KVNAME=arockssprngbootkv <br/>
 
 ### Create a new Key Vault in the resource group.
 az keyvault create \
