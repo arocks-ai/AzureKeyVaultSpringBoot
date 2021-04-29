@@ -62,10 +62,9 @@ az keyvault secret set --name "connectionString" \
     --value "jdbc:sqlserver://SERVER.database.windows.net:1433;database=DATABASE;"
     
     
-# Run Java Application
+# Build and Run Java Application
 
-## Add Key Vault integration to the app
-Udpate src/main/resources/application.properties file with the following
+Udpate src/main/resources/application.properties file with the following settings
 
 azure.keyvault.client-id=appId-from-service-principal-creation-output <br/>
 azure.keyvault.client-key=password-from-service-principal-creation-output <br/>
