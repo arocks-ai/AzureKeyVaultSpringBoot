@@ -1,12 +1,8 @@
 # AzureKeyVaultSpringBoot
+Sample Spring Boot Application gets secret from Azure key vault
 
 ## Tutorial source
 https://docs.microsoft.com/en-us/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-key-vault
-
-## Login to azure
-az login <br/>
-az account list <br/>
-az account set -s ssssssss-ssss-ssss-ssss-ssssssssssss <br/>
 
 ## Create a service principal
 
@@ -26,7 +22,7 @@ The output will looks like <br/>
 Save appId,  name, password, tenant values
 
 
-# Create the Key Vault instance
+## Create the Key Vault instance
 
 ### Get supported regions for the account
 az account list-locations --output table
@@ -62,7 +58,7 @@ az keyvault secret set --name "connectionString" \
     --value "jdbc:sqlserver://SERVER.database.windows.net:1433;database=DATABASE;"
     
     
-# Build and Run Java Application
+## Build and Run Java Application
 
 Udpate src/main/resources/application.properties file with the following settings
 
