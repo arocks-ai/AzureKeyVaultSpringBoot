@@ -9,17 +9,20 @@ az account list
 az account set -s ssssssss-ssss-ssss-ssss-ssssssssssss
 
 ## Create a service principal
+
 Azure AD service principals provide access to Azure resources within your subscription
 
 az ad sp create-for-rbac --name arocks-app-sp
-Output will looks like 
-{
-  "appId": "appId-VALUE",
-  "displayName": "SP_NAME",
-  "name": "http://SP_NAME",
-  "password": "PASSWORD-VALUE",
-  "tenant": "TENANT_VALUE"
+
+The output will looks like <br/>
+{ <br/>
+  "appId": "appId-VALUE",  <br/>
+  "displayName": "SP_NAME",  <br/>
+  "name": "http://SP_NAME",  <br/>
+  "password": "PASSWORD-VALUE", <br/>
+  "tenant": "TENANT_VALUE" <br/>
 }
+
 Save appId,  name, password, tenant values
 
 
@@ -64,13 +67,13 @@ az keyvault secret set --name "connectionString" \
 ## Add Key Vault integration to the app
 Udpate src/main/resources/application.properties file with the following
 
-azure.keyvault.client-id=appId-from-service-principal-creation-output
-azure.keyvault.client-key=password-from-service-principal-creation-output
-azure.keyvault.enabled=true
-azure.keyvault.tenant-id=Tenent-from-service-principal-creation-output
-azure.keyvault.uri=keyvault-URL
+azure.keyvault.client-id=appId-from-service-principal-creation-output <br/>
+azure.keyvault.client-key=password-from-service-principal-creation-output <br/>
+azure.keyvault.enabled=true <br/>
+azure.keyvault.tenant-id=Tenent-from-service-principal-creation-output <br/>
+azure.keyvault.uri=keyvault-URL <br/>
 
 
-mvn spring-boot:run
-mvn clean package spring-boot:run
-curl http://localhost:8080/get
+mvn spring-boot:run <br/>
+mvn clean package spring-boot:run <br/>
+curl http://localhost:8080/get <br/>
