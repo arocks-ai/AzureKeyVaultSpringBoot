@@ -1,6 +1,14 @@
 # AzureKeyVaultSpringBoot
 Sample Spring Boot Application gets secret from Azure key vault
 
+## Run app using Docker  Images
+Create docker image based on jar
+docker build -t springio/spring-boot-docker --file Dockerfile-openjdk2 . 
+
+Run the container 
+docker run -p 8082:8080 -t springio/spring-boot-docker
+
+
 ## Tutorial source
 https://docs.microsoft.com/en-us/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-key-vault
 
