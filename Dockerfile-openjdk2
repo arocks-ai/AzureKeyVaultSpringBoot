@@ -1,0 +1,16 @@
+# Running the app with  user privileges only
+
+## Create docker image based on jar
+#docker build -t springio/spring-boot-docker --file Dockerfile-openjdk2 . 
+# Run the container 
+#docker run -p 8082:8080 -t springio/spring-boot-docker
+
+
+FROM openjdk:8-jdk-alpine
+RUN addgroup -S spring && adduser -S spring -G spring
+USER spring:spring
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
+
+
